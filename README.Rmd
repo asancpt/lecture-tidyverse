@@ -1,14 +1,16 @@
-# R programming Week 9
-# Sungpil Han
+---
+title: R programming Week 9
+author: Sungpil Han
+---
 
+```{r setup}
 Week09 <- c("tidyverse", "shiny", "dplyr", "ggplot2", "rmarkdown", "knitr", "flexdashboard", "ggsci")
 
 #install.packages(Week09)
 LibraryWeek09 <- lapply(Week09, library, character.only = TRUE)
-
-#get help with a function
-?c
-
+```
+    
+```{r}
 #assign data to a variable
 x <- c(77, 66, 88)
 mean(x)
@@ -29,21 +31,17 @@ pie(x)
 #' - Run from the beginneing
 #' - Run to the end
 #' - Plot
-#' 
+```
 
+```{r eval = FALSE}
 
 # Create Shiny Web App
 
-## Examples: shiny
-
 shiny::runApp("Shiny")
-shiny::runApp("app0")
-shiny::runApp("app1")
-shiny::runApp("app2") # install.packages("deSolve")
 shiny::runApp("pk_pd") # PMx_2016
+```
 
-
-
+```{r}
 ## Examples: ggplot2
 
 library(ggplot2)
@@ -66,5 +64,7 @@ qplot(log(pm25), log(eno), data = maacs)
 qplot(log(pm25), log(eno), data = maacs, shape = mopos)
 qplot(log(pm25), log(eno), data = maacs, color = mopos)
 qplot(log(pm25), log(eno), data = maacs, color = mopos, geom = c("point", "smooth"), method = "lm")
-qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"), method = "lm", facets = . ~ mopos)
+qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"), methods = "lm", facets = . ~ mopos)
+```
+
 
