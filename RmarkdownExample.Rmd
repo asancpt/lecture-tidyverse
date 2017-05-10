@@ -1,0 +1,113 @@
+---
+title: "Rmarkdown"
+author: "Sungpil"
+date: '2017-05-10'
+output:
+  html_document:
+    toc: yes
+  flexdashboard::flex_dashboard: default
+  ioslides_presentation: default
+  slidy_presentation: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Rmarkdown에 대하여
+
+## Text formatting
+
+문자 모양을 결정합니다
+
+*italic*  or _italic_  
+**bold**   __bold__  
+`code`  
+위첨자^2^ 아래첨자~2~
+
+## Headings
+
+```
+# 1st Level Header
+## 2nd Level Header
+### 3rd Level Header
+#### 4th Level Header
+
+1st Level Header
+================
+
+2nd Level Header
+----------------
+```
+
+
+## Lists
+
+* Bulleted list item 1
+
+* Item 2
+
+    * Item 2a
+
+    * Item 2b
+
+1.  Numbered list item 1
+
+1.  Item 2. The numbers are incremented automatically in the output.
+
+## Links and images
+
+<http://rpubs.com/shanmdphd/274885>
+
+[Rpubs](http://rpubs.com/shanmdphd/274885)
+
+![피카츄](pica.jpg)
+
+## Tables 
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+## Head of Theoph
+
+```{r}
+knitr::kable(head(Theoph))
+```
+
+## Plot of Theoph
+
+```{r plot}
+plot(Theoph$Time, Theoph$conc)
+```
+
+## Rendering
+
+```{r eval = FALSE}
+rmarkdown::render("1-example.Rmd")
+```
+
+## Navigation
+
+Ctrl + Alt + J
+
+## Reference
+
+
+# Examples: ggplot2
+
+```{r}
+library(ggplot2)
+qplot(displ, hwy, data = mpg)
+qplot(displ, hwy, data = mpg, color = drv)
+qplot(displ, hwy, data = mpg, geom = c("point", "smooth"))
+qplot(hwy, data = mpg, fill = drv)
+qplot(displ, hwy, data = mpg, facets = . ~ drv)
+qplot(hwy, data = mpg, facets = drv ~ ., binwidth = 2)
+
+
+```
+
