@@ -1,7 +1,8 @@
 # R programming Week 9
 # Sungpil Han
 
-Week09 <- c("tidyverse", "shiny", "dplyr", "ggplot2", "rmarkdown", "knitr", "flexdashboard")
+Week09 <- c("tidyverse", "shiny", "dplyr", "ggplot2", "rmarkdown", "knitr", "flexdashboard", "ggsci")
+
 #install.packages(Week09)
 LibraryWeek09 <- lapply(Week09, library, character.only = TRUE)
 
@@ -66,7 +67,4 @@ qplot(log(pm25), log(eno), data = maacs, shape = mopos)
 qplot(log(pm25), log(eno), data = maacs, color = mopos)
 qplot(log(pm25), log(eno), data = maacs, color = mopos, geom = c("point", "smooth"), method = "lm")
 qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"), method = "lm", facets = . ~ mopos)
-
-# qplot(logpm25, NocturnalSympt, data = maacs, facets = . ~ bmicat, geom = c("point", "smooth"), method = "lm”)
-
 

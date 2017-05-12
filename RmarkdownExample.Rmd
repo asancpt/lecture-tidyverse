@@ -3,10 +3,9 @@ title: "Rmarkdown"
 author: "Sungpil"
 date: '2017-05-10'
 output:
-  html_document:
-    toc: yes
-  flexdashboard::flex_dashboard: default
   ioslides_presentation: default
+  html_document: default
+  flexdashboard::flex_dashboard: default
   slidy_presentation: default
   word_document: default
 ---
@@ -53,9 +52,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
     * Item 2b
 
-1.  Numbered list item 1
-
+2.  Numbered list item 1
 1.  Item 2. The numbers are incremented automatically in the output.
+
 
 ## Links and images
 
@@ -84,11 +83,7 @@ knitr::kable(head(Theoph))
 plot(Theoph$Time, Theoph$conc)
 ```
 
-## Rendering
-
-```{r eval = FALSE}
-rmarkdown::render("1-example.Rmd")
-```
+This is conc-time curve of PK data of Theophylline.
 
 ## Navigation
 
@@ -96,18 +91,7 @@ Ctrl + Alt + J
 
 ## Reference
 
-
-# Examples: ggplot2
-
 ```{r}
-library(ggplot2)
-qplot(displ, hwy, data = mpg)
-qplot(displ, hwy, data = mpg, color = drv)
-qplot(displ, hwy, data = mpg, geom = c("point", "smooth"))
-qplot(hwy, data = mpg, fill = drv)
-qplot(displ, hwy, data = mpg, facets = . ~ drv)
-qplot(hwy, data = mpg, facets = drv ~ ., binwidth = 2)
-
-
+knitr::write_bib(file = "packages.bib")
 ```
 
