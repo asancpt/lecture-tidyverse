@@ -1,12 +1,14 @@
 ---
-title: R programming Week 9
-author: Sungpil Han
+title: "R programming Week 9"
+author: "Sungpil Han"
 ---
 
-```{r setup}
-Week09 <- c("tidyverse", "shiny", "dplyr", "ggplot2", "rmarkdown", "knitr", "flexdashboard", "ggsci")
+2017년 1학기 강의용으로 만든 자료입니다.
 
-#install.packages(Week09)
+```{r setup}
+knitr::opts_chunk$set(error = TRUE, warning = FALSE)
+
+Week09 <- c("tidyverse", "shiny", "dplyr", "ggplot2", "rmarkdown", "knitr", "flexdashboard", "ggsci") #install.packages(Week09)
 LibraryWeek09 <- lapply(Week09, library, character.only = TRUE)
 ```
     
@@ -67,4 +69,9 @@ qplot(log(pm25), log(eno), data = maacs, color = mopos, geom = c("point", "smoot
 qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"), methods = "lm", facets = . ~ mopos)
 ```
 
+# Session info
+
+```{r}
+devtools::session_info()
+```
 
