@@ -119,7 +119,7 @@ qplot(hwy, data = mpg, facets = drv ~ ., binwidth = 2)
 ![](README_files/figure-markdown_github/unnamed-chunk-3-6.png)
 
 ``` r
-maacs <- read.csv("maacs.csv", as.is = TRUE)
+maacs <- read.csv("data-raw/maacs.csv", as.is = TRUE)
 str(maacs)
 ```
 

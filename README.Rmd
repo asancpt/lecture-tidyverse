@@ -54,7 +54,7 @@ qplot(hwy, data = mpg, fill = drv)
 qplot(displ, hwy, data = mpg, facets = . ~ drv)
 qplot(hwy, data = mpg, facets = drv ~ ., binwidth = 2)
 
-maacs <- read.csv("maacs.csv", as.is = TRUE)
+maacs <- read.csv("data-raw/maacs.csv", as.is = TRUE)
 str(maacs)
 
 # examples of qplot
