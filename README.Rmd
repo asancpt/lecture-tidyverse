@@ -1,6 +1,9 @@
 ---
 title: "R programming Week 9"
 author: "Sungpil Han"
+output:
+  github_document: default
+
 ---
 
 2017년 1학기 강의용으로 만든 자료입니다.
